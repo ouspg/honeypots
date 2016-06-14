@@ -1,6 +1,19 @@
 # kippo-with-sa
 Packaging Kippo honeypot for small communities with joint Situational Awareness
 
+## kippo
+WHAT
+Kippo with Situational Awareness is easy to deploy kippo.
+
+WHY
+Because we can! And because boxes, software and os are getting old.
+
+TO WHOM
+Ouspg-alumnis and affiliates who have been running kippo.
+
+HOW
+Dockerify
+
 ## References
 
 * http://threatstream.github.io/mhn/
@@ -15,3 +28,6 @@ Packaging Kippo honeypot for small communities with joint Situational Awareness
 * https://github.com/micheloosterhof/kippo
 * http://honeyn3t.ie/?p=1342
 * http://kitrule.blogspot.fi/2012/03/kippo-ssh-honeypot-on-ubuntu-1104.html
+Other kippo repos
+* https://github.com/vensder/alpine-kippo/blob/master/Dockerfile
+* https://github.com/micheloosterhof/cowrie
