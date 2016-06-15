@@ -1,7 +1,7 @@
-FROM alpine
+FROM alpine:3.4
 MAINTAINER Kasper Kyllonen <nkapu@iki.fi>
 
-RUN apk update && apk upgrade -U -a
+RUN apk -U upgrade
 RUN apk add \
     python \
     python-dev \
