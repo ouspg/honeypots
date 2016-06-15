@@ -1,22 +1,30 @@
-FROM alpine:3.3
+FROM alpine
 MAINTAINER Kasper Kyllonen <nkapu@iki.fi>
 
-RUN \
-  apk update && \
-  apk upgrade -U -a && \
-  apk add && \
-    git \
-    openssl \
+RUN apk update && apk upgrade -U -a
+RUN apk add \
+    python \
     python-dev \
-    py-openssl \
     py-asn1 \
     py-twisted \
-RUN useradd -d /kippo -s /bin/bash -m kippo -g sudo
-RUN clone -q https://github.com/micheloosterhof/cowrie /kippo-app
-RUN mv /kippo-app/kippo.cfg.dist /kippo-app/kippo.cfg
-RUN chown kippo /kippo-app -R
+    py-zope-interface \
+    py-crypto \
+    libffi-dev \
+    py-cryptography \
+    py-pip \
+    py-six \
+    py-cffi \
+    py-idna \
+    py-ipaddress \
+    git && \
+pip install enum34 && \
+adduser -D -s /bin/sh kippo kippo && \
+git clone -q https://github.com/micheloosterhof/cowrie /home/kippo && \
+cd /home/kippo && \
+mv cowrie.cfg.dist cowrie.cfg && \
+chown -R kippo:kippo /home/kippo
 
 EXPOSE 2222
 USER kippo
-WORKDIR /kippo-app
-CMD ["twistd", "--nodaemon", "-y", "kippo.tac", "--pidfile=kippo.pid"]
+WORKDIR /home/kippo
+CMD ./start.sh
