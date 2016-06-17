@@ -1,38 +1,51 @@
 # Honeypots
-Packaging honeypots for small communities with joint Situational Awareness
+Packaging honeypots for small communities with joint Situational Awareness.
 
 ### WHAT
-Honeypot with Situational Awareness is easy to deploy honeypot.
+Easy to deploy and to keep updated honeypots with Situational Awareness.
 
 ### WHY
-Because we can! And because boxes, software and os are getting old.
+Because we can! And because previous boxes, software and os installs are
+getting old.
 
 ### TO WHOM
-OUSPG-alumnis and affiliates who have been running honeypot.
+OUSPG-alumnis and affiliates who have been running honeypots.
 
 ### HOW
-Dockerify
+Dockerify latest.
 
-## Installing kippo-with-sa
+## Kippo
 
-### Kippo-with-sa in dockerhub
-https://hub.docker.com/r/nkapu/kippo/
+Kippo is now obsolete in our use, see [our old instructions](https://docs.google.com/document/d/1alb60WiWMzghZlApgfqfh5LF2mjn-U0Nm8WeKcPD-hI/edit).
+
+## Cowrie
+
+Replaces old patched up Kippo in our use.
+
+### Running directly from the Docker Hub
+
+A prebuild container image is available from the
+[Docker Hub](https://hub.docker.com/r/nkapu/kippo/).
+
 ```
 docker pull nkapu/kippo
 docker run -d -p 2222:2222 --name kippo
 ```
-### Digitalocean
-* First choose create droplet
-* Then choose Docker from One-click apps section
-* Choose hostname and create your machine
+
+### Running on the DigitalOcean
+
+ * First choose create droplet
+ * Then choose Docker from One-click apps section
+ * Choose hostname and create your machine
+
 ```
 # apt-get update  
 #
 ```
 
-### Amazon Web Services
+### Running on the Amazon Web Services (AWS)
 
-### Google cloud platform
+### Running on the Google Cloud Platform
 
 ## References
 
