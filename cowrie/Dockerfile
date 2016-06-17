@@ -16,13 +16,11 @@ RUN apk -U upgrade && \
       py-ipaddress \
       git && \
     pip install enum34
-RUN adduser -D -s /bin/sh kippo kippo && \
-    git clone -q https://github.com/ouspg/cowrie /home/kippo && \
-    cd /home/kippo && \
-    mv cowrie.cfg.dist cowrie.cfg && \
-    chown -R kippo:kippo /home/kippo
+RUN adduser -D -s /bin/sh cowrie cowrie && \
+    su - cowrie -c "git clone -q https://github.com/ouspg/cowrie && \
+                    cd cowrie && cp cowrie.cfg.dist cowrie.cfg"
 
 EXPOSE 2222
-USER kippo
-WORKDIR /home/kippo
+USER cowrie
+WORKDIR /home/cowrie/cowrie
 CMD ./start.sh

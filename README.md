@@ -22,11 +22,10 @@ A prebuild container image is available from the
 [Docker Hub](https://hub.docker.com/r/nkapu/kippo/).
 
 ```
-docker pull nkapu/kippo
 docker run -d -p 2222:2222 --name kippo nkapu/kippo
 ```
 
-### Building in cloned repository
+### Building in a cloned repository
 
 ```
 git clone https://github.com/ouspg/honeypots.git
@@ -34,7 +33,7 @@ cd honeypots/cowrie
 docker build -t cowrie --rm .
 ```
 
-### Building directly from github
+### Building directly from the GitHub
 
 ```
 docker build -t cowrie --rm https://github.com/ouspg/honeypots.git#:cowrie
