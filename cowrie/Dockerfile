@@ -14,6 +14,7 @@ RUN apk -U upgrade && \
       py-cffi \
       py-idna \
       py-ipaddress \
+      py-openssl \
       git && \
     pip install enum34
 RUN adduser -D -s /bin/sh cowrie cowrie && \
