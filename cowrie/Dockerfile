@@ -23,4 +23,4 @@ RUN adduser -D -s /bin/sh cowrie cowrie && \
 EXPOSE 2222
 USER cowrie
 WORKDIR /home/cowrie/cowrie
-CMD ./start.sh
+CMD env XARGS=--nodaemon ./start.sh
