@@ -39,6 +39,12 @@ docker build -t cowrie --rm .
 docker build -t cowrie --rm https://github.com/ouspg/honeypots.git#:cowrie
 ```
 
+### Running self-built locally
+
+```
+docker run -ti -p 2222:2222 --rm cowrie
+```
+
 ### Running on the DigitalOcean
 
  * First choose create droplet
