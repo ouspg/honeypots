@@ -1,18 +1,12 @@
 # Honeypots
+
 Packaging honeypots for small communities with joint Situational Awareness.
 
-### WHAT
-Easy to deploy and to keep updated honeypots with Situational Awareness.
-
-### WHY
-Because we can! And because previous boxes, software and os installs are
+* **WHAT**: Easy to deploy and to keep updated honeypots with Situational Awareness.
+* **WHY**: Because we can! And because previous boxes, software and os installs are
 getting old.
-
-### TO WHOM
-OUSPG-alumnis and affiliates who have been running honeypots.
-
-### HOW
-Dockerify latest.
+* **TO WHOM**: OUSPG-alumnis and affiliates who have been running honeypots.
+* **HOW**: Dockerify latest.
 
 ## Kippo
 
@@ -30,6 +24,20 @@ A prebuild container image is available from the
 ```
 docker pull nkapu/kippo
 docker run -d -p 2222:2222 --name kippo nkapu/kippo
+```
+
+### Building in cloned repository
+
+```
+git clone https://github.com/ouspg/honeypots.git
+cd honeypots/cowrie
+docker build -t cowrie --rm .
+```
+
+### Building directly from github
+
+```
+docker build -t cowrie --rm https://github.com/ouspg/honeypots.git#:cowrie
 ```
 
 ### Running on the DigitalOcean
