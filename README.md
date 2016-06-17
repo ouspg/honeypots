@@ -29,7 +29,7 @@ A prebuild container image is available from the
 
 ```
 docker pull nkapu/kippo
-docker run -d -p 2222:2222 --name kippo
+docker run -d -p 2222:2222 --name kippo nkapu/kippo
 ```
 
 ### Running on the DigitalOcean
