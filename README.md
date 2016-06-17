@@ -13,6 +13,26 @@ Ouspg-alumnis and affiliates who have been running kippo.
 ### HOW
 Dockerify
 
+## Installing kippo-with-sa
+
+### Kippo-with-sa in dockerhub
+https://hub.docker.com/r/nkapu/kippo/
+```
+docker pull nkapu/kippo
+```
+### Digitalocean
+* First choose create droplet
+* Then choose Docker from One-click apps section
+* Choose hostname and create your machine
+```
+# apt-get update  
+#
+```
+
+### Amazon Web Services
+
+### Google cloud platform
+
 ## References
 
 * http://threatstream.github.io/mhn/
