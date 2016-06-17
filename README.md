@@ -1,14 +1,14 @@
-# kippo-with-sa
-Packaging Kippo honeypot for small communities with joint Situational Awareness
+# Honeypots
+Packaging honeypots for small communities with joint Situational Awareness
 
 ### WHAT
-Kippo with Situational Awareness is easy to deploy kippo.
+Honeypot with Situational Awareness is easy to deploy honeypot.
 
 ### WHY
 Because we can! And because boxes, software and os are getting old.
 
 ### TO WHOM
-Ouspg-alumnis and affiliates who have been running kippo.
+OUSPG-alumnis and affiliates who have been running honeypot.
 
 ### HOW
 Dockerify
@@ -47,7 +47,7 @@ docker pull nkapu/kippo
 * https://github.com/micheloosterhof/kippo
 * http://honeyn3t.ie/?p=1342
 * http://kitrule.blogspot.fi/2012/03/kippo-ssh-honeypot-on-ubuntu-1104.html
-* Other kippo repos
+* Other honeypot repos
 * https://github.com/vensder/alpine-kippo/blob/master/Dockerfile
 * https://github.com/micheloosterhof/cowrie
 * https://github.com/desaster/kippo
