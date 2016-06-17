@@ -19,6 +19,7 @@ Dockerify
 https://hub.docker.com/r/nkapu/kippo/
 ```
 docker pull nkapu/kippo
+docker run -d -p 2222:2222 --name kippo
 ```
 ### Digitalocean
 * First choose create droplet
