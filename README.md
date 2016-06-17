@@ -22,7 +22,7 @@ A prebuild container image is available from the
 [Docker Hub](https://hub.docker.com/r/nkapu/kippo/).
 
 ```
-docker run -d -p 2222:2222 --name kippo nkapu/kippo
+docker run -d -p 2222:2222 --name cowrie nkapu/cowrie
 ```
 
 ### Building in a cloned repository
@@ -37,6 +37,18 @@ docker build -t cowrie --rm .
 
 ```
 docker build -t cowrie --rm https://github.com/ouspg/honeypots.git#:cowrie
+```
+
+### Publishing on the Docker Hub
+
+Based on the instructions from:
+https://docs.docker.com/mac/step_six/
+
+```
+docker images
+docker tag <imageid> nkapu/cowrie:latest
+docker login
+docker push nkapu/cowrie
 ```
 
 ### Running self-built locally
