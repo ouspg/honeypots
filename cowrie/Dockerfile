@@ -16,7 +16,8 @@ RUN apk -U upgrade && \
       py-ipaddress \
       py-openssl \
       git && \
-    pip install enum34
+    pip install enum34 && \
+    pip install service-identity
 RUN adduser -D -s /bin/sh cowrie cowrie && \
     su - cowrie -c "git clone -q https://github.com/ouspg/cowrie && \
                     cd cowrie && cp cowrie.cfg.dist cowrie.cfg"

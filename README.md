@@ -72,6 +72,11 @@ docker run -ti -p 2222:2222 --rm cowrie
 
 ### Running on the Google Cloud Platform
 
+## Alpine cowrie vs Ubuntu kippo
+```
+kippo  latest b83a55e14965   16 seconds ago 393.1 MB
+cowrie latest 0852a1044ab8   2 minutes ago  115 MB
+```
 ## References
 
 * http://threatstream.github.io/mhn/
