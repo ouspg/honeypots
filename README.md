@@ -19,10 +19,10 @@ Replaces old patched up Kippo in our use.
 ### Running directly from the Docker Hub
 
 A prebuild container image is available from the
-[Docker Hub](https://hub.docker.com/r/nkapu/kippo/).
+[Docker Hub](https://hub.docker.com/r/ouspg/cowrie/).
 
 ```
-docker run -d -p 2222:2222 --name cowrie nkapu/cowrie
+docker run -d -p 2222:2222 --name cowrie ouspg/cowrie
 ```
 
 ### Building in a cloned repository
@@ -46,9 +46,9 @@ https://docs.docker.com/mac/step_six/
 
 ```
 docker images
-docker tag <imageid> nkapu/cowrie:latest
+docker tag <imageid> ouspg/cowrie:latest
 docker login
-docker push nkapu/cowrie
+docker push ouspg/cowrie
 ```
 
 ### Running self-built locally
