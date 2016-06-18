@@ -1,8 +1,8 @@
 FROM alpine:latest
 MAINTAINER Kasper Kyllonen <nkapu@iki.fi>
 
-RUN apk -U upgrade && \
-    apk add \
+RUN apk --no-cache upgrade && \
+    apk --no-cache add \
       python \
       py-asn1 \
       py-twisted \
