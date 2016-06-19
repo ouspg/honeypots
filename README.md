@@ -64,8 +64,9 @@ docker run -ti -p 2222:2222 --rm cowrie
  * Choose hostname and create your machine
 
 ```
-# apt-get update  
-#
+# apt-get update
+# apt-get upgrade
+# docker run -d -p 2222:2222 --name cowrie ouspg/cowrie
 ```
 
 ### Running on the Amazon Web Services (AWS)
