@@ -66,7 +66,18 @@ docker run -ti -p 2222:2222 --rm cowrie
 ```
 # apt-get update
 # apt-get upgrade
-# docker run -d -p 2222:2222 --name cowrie ouspg/cowrie
+# cd /etc/ssh
+# cp sshd_config sshd_config.orig
+# nano sshd_config
+# diff sshd_config.orig sshd_config
+5c5
+< Port 22
+---
+> Port 7799
+# service ssh reload
+# docker run -d -p 22:2222 --name cowrie ouspg/cowrie
+# docker logs cowrie
+Starting cowrie with extra arguments [--nodaemon] ...
 ```
 
 ### Running on the Amazon Web Services (AWS)
