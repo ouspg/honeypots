@@ -1,63 +1,68 @@
+***
+This document is now obsolete, provided here for reference purposes only
+***
+
 # Introduction
 
 How to install Kippo on different operating systems. Three different methods to bind to privileged ssh port (22) were tried out: firewall redirect, authbind and capabilities.
 
 ## Raspbian
 
-**Update**
-```
-# apt-get update
-# apt-get upgrade
+**Update** (as root)
+
+```sh
+apt-get update
+apt-get upgrade
 ```
 
-### Step 1: Changing the SSH port
+### Step 1: Changing the SSH port (as root)
 
-```
-# sudo -s
-# cd /etc/ssh
-# cp sshd_config sshd_config.orig
-# nano sshd_config
-# diff sshd_config.orig sshd_config
+```sh
+sudo -s
+cd /etc/ssh
+cp sshd_config sshd_config.orig
+nano sshd_config
+diff sshd_config.orig sshd_config
 5c5
 < Port 22
 ---
 > Port 7799
-# service ssh reload
+service ssh reload
 ```
 
-### Step 2: Installing Dependencies
+### Step 2: Installing Dependencies (as root)
 
-```
-# apt-get install python-dev openssl python-openssl python-pyasn1 python-twisted
-# apt-get install curl
-```
-
-### Step 3: Creating the Kippo User
-
-```
-# useradd -m kippo
+```sh
+apt-get install python-dev openssl python-openssl python-pyasn1 python-twisted
+apt-get install curl
 ```
 
-### Step 4: Allow Kippo to bind privileged port 22
+### Step 3: Creating the Kippo User (as root)
 
-```
-# apt-get install authbind
-# touch /etc/authbind/byport/22
-# chown kippo /etc/authbind/byport/22
-# chmod 777 /etc/authbind/byport/22
+```sh
+useradd -m kippo
 ```
 
-### Step 5: Downloading and Configuring Kippo
+### Step 4: Allow Kippo to bind privileged port 22 (as root)
 
+```sh
+apt-get install authbind
+touch /etc/authbind/byport/22
+chown kippo /etc/authbind/byport/22
+chmod 777 /etc/authbind/byport/22
+su - kippo
 ```
-# su - kippo
-% curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
-% tar zxvf kippo.tar.gz
-% mv micheloosterhof-kippo-636b31c/ kippo
-% cd kippo
-% cp kippo.cfg.dist kippo.cfg
-% nano kippo.cfg
-% diff kippo.cfg.dist kippo.cfg
+
+### Step 5: Downloading and Configuring Kippo (as kippo)
+
+```sh
+curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
+tar zxvf kippo.tar.gz
+mv micheloosterhof-kippo-636b31c/ kippo
+cd kippo
+cp kippo.cfg.dist kippo.cfg
+nano kippo.cfg
+diff kippo.cfg.dist kippo.cfg
 15c15
 < ssh_port = 2222
 ---
@@ -77,92 +82,98 @@ How to install Kippo on different operating systems. Three different methods to 
   * boot: boot.foo.sh
   * install: Ubuntu 12.04 LTS i386
 
-**Update**
+![Ubuntu install from boot.foo.sh](install-ubuntu-from-boot-foo-sh.png)
 
-```
+**Update** (as root)
+
+```sh
 # apt-get update
 # apt-get upgrade
 ```
 
-### Step 1: Changing the SSH port
+### Step 1: Changing the SSH port (as root)
 
-```
-# cd /etc/ssh
-# cp sshd_config sshd_config.orig
-# nano sshd_config
-# diff sshd_config.orig sshd_config
+```sh
+cd /etc/ssh
+cp sshd_config sshd_config.orig
+nano sshd_config
+diff sshd_config.orig sshd_config
 5c5
 < Port 22
 ---
 > Port 7799
-# reload ssh
+reload ssh
 ```
 
-### Step 2: Installing Dependencies
+### Step 2: Installing Dependencies (as root)
 
-```
-# apt-get install python-dev openssl python-openssl python-pyasn1 python-twisted
-# apt-get install curl
-```
-
-### Step 3: Creating the Kippo User
-
-```
-# useradd -m kippo
+```sh
+apt-get install python-dev openssl python-openssl python-pyasn1 python-twisted
+apt-get install curl
 ```
 
-### Step 4: Allow Kippo to bind to privileged port 22
+### Step 3: Creating the Kippo User (as root)
 
-```
-# apt-get install authbind
-# touch /etc/authbind/byport/22
-# chown kippo /etc/authbind/byport/22
-# chmod 777 /etc/authbind/byport/22
+```sh
+useradd -m kippo
 ```
 
-### Step 5: Downloading and Configuring Kippo
+### Step 4: Allow Kippo to bind to privileged port 22 (as root)
 
+```sh
+apt-get install authbind
+touch /etc/authbind/byport/22
+chown kippo /etc/authbind/byport/22
+chmod 777 /etc/authbind/byport/22
+su - kippo
 ```
-# su - kippo
-% curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
-% tar zxvf kippo.tar.gz
-% mv micheloosterhof-kippo-636b31c/ kippo
-% cd kippo
-% cp kippo.cfg.dist kippo.cfg
-% nano kippo.cfg
-% diff kippo.cfg.dist kippo.cfg
+
+### Step 5: Downloading and Configuring Kippo (as kippo)
+
+```sh
+curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
+tar zxvf kippo.tar.gz
+mv micheloosterhof-kippo-636b31c/ kippo
+cd kippo
+cp kippo.cfg.dist kippo.cfg
+nano kippo.cfg
+diff kippo.cfg.dist kippo.cfg
 15c15
 < ssh_port = 2222
 ---
 > ssh_port = 22
 ```
 
-### Step 6: Startup Script
+### Step 6: Startup Script (as kippo)
 
-```
-% cp start.sh start.sh.orig
-% nano start.sh
-% diff start.sh.orig start.sh
+```sh
+cp start.sh start.sh.orig
+nano start.sh
+diff start.sh.orig start.sh
 4c4
 < twistd -y kippo.tac -l log/kippo.log --pidfile kippo.pid
 ---
 > authbind --deep twistd -y kippo.tac -l log/kippo.log --pidfile kippo.pid
-%  ./start.sh			# or go to Step 8 below for autostart setup
+
+./start.sh			# or go to Step 8 below for autostart setup
 ```
 
-### Step 7: Autostart
+### Step 7: Autostart (as root)
 
-```
-# nano /etc/init/kippo.conf
+```sh
+nano /etc/init/kippo.conf
+cat /etc/init/kippo.conf
+
 start on started networking
 respawn
 script
   ulimit -Sn 4096
   exec start-stop-daemon -S -c kippo -d /home/kippo/kippo -x /usr/bin/authbind -- --deep twistd -n -y kippo.tac -l log/kippo.log --pidfile kippo.pid
 end script
-# initctl reload-configuration
-# initctl start kippo
-# initctl status kippo
+
+initctl reload-configuration
+initctl start kippo
+initctl status kippo
 ```
 
 **Installation size**
@@ -192,55 +203,60 @@ Swap:  1582076        0       1582076
   * boot: boot.foo.sh
   * install: CentOS 6 i386
 
-**Update**
+![CentOS install from boot.foo.sh](install-centos-from-boot-foo-sh.png)
 
-```
-# yum update
-```
+**Update** (as root)
 
-### Step 1: Install python-twisted
-
-```
-# yum install python-twisted
+```sh
+yum update
 ```
 
-### Step 2: Move sshd to non-standard port and configure firewall
+### Step 1: Install python-twisted (as root)
 
+```sh
+yum install python-twisted
 ```
-# cd /etc/sysconfig
-# cp iptables iptables.orig
-# nano iptables
-# diff iptables.orig iptables
+
+### Step 2: Move sshd to non-standard port and configure firewall (as root)
+
+```sh
+cd /etc/sysconfig
+cp iptables iptables.orig
+nano iptables
+diff iptables.orig iptables
 10a11
 > -A INPUT -m state --state NEW -m tcp -p tcp --dport 7799 -j ACCEPT
-# service iptables restart
-# cd /etc/ssh
-# cp sshd_config sshd_config.orig
-# nano sshd_config
-# diff sshd_config.orig sshd_config
+
+service iptables restart
+cd /etc/ssh
+cp sshd_config sshd_config.orig
+nano sshd_config
+diff sshd_config.orig sshd_config
 13c13
 < #Port 22
 ---
 > Port 7799
-# service sshd restart
+
+service sshd restart
 ```
 
-### Step 3: Allow Python to bind to port below 1024 and add kippo user
+### Step 3: Allow Python to bind to port below 1024 and add kippo user (as root)
 
-```
-# setcap 'cap_net_bind_service=+ep' /usr/bin/python
-# useradd kippo# su - kippo
+```sh
+setcap 'cap_net_bind_service=+ep' /usr/bin/python
+useradd kippo
+su - kippo
 ```
 
-### Step 4: Install Kippo
+### Step 4: Install Kippo (as kippo)
 
-```
-% curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
-% tar zxvf kippo.tar.gz
-% mv micheloosterhof-kippo-c89face/ kippo
-% cd kippo
-% cp kippo.cfg.dist kippo.cfg
-% diff kippo.cfg.dist kippo.cfg
+```sh
+curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
+tar zxvf kippo.tar.gz
+mv micheloosterhof-kippo-c89face/ kippo
+cd kippo
+cp kippo.cfg.dist kippo.cfg
+diff kippo.cfg.dist kippo.cfg
 15c15
 < ssh_port = 2222
 ---
@@ -251,10 +267,10 @@ Swap:  1582076        0       1582076
 > hostname = intra
 ```
 
-### Step 5: Starting kippo
+### Step 5: Starting kippo (as kippo)
 
-```
-% sh start.sh
+```sh
+sh start.sh
 ```
 **Installation size**
 
@@ -283,66 +299,69 @@ Swap:  1658872      0        1658872
   * boot: boot.foo.sh
   * install: OpenBSD 5.4 i386
 
-**Update**
+![OpenBSD Install from boot.foo.sh](install-openbsd-from-boot-foo-sh.png)
 
-```
-# pkg_add -Uu
-# build-system src && build-system kernel && reboot
-# build-system system && reboot
-# rm -rf /usr/src/* /usr/obj/*
+**Update** (as root)
+
+```sh
+pkg_add -Uu
+build-system src && build-system kernel && reboot
+build-system system && reboot
+rm -rf /usr/src/* /usr/obj/*
 ```
 
-### Step 1: Install python-twisted
+### Step 1: Install python-twisted (as root)
 
-```
+```sh
 /* OBSOLETE WAY: export PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m` */
-# echo "installpath = http://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`" > /etc/pkg.conf
-# pkg_add -iv py-twisted-core
-# pkg_add -iv py-twisted-conch
-# pkg_add -iv py-asn1
-# pkg_add -iv py-twisted-web
+echo "installpath = http://ftp.eu.openbsd.org/pub/OpenBSD/`uname -r`/packages/`uname -m`" > /etc/pkg.conf
+pkg_add -iv py-twisted-core
+pkg_add -iv py-twisted-conch
+pkg_add -iv py-asn1
+pkg_add -iv py-twisted-web
 ```
 
-### Step 2: Configure firewall
+### Step 2: Configure firewall (as root)
 
-```
-# cd /etc/
-# cp pf.conf pf.conf.orig
-# vi pf.conf
-# diff pf.conf.orig pf.config
+```sh
+cd /etc/
+cp pf.conf pf.conf.orig
+vi pf.conf
+diff pf.conf.orig pf.config
 9a10,12
 > pass in quick proto tcp from any to self port 22 rdr-to localhost port 2222
 > pass in quick proto tcp from any to self port 7799 rdr-to localhost port 22
 >
 10a14
 > pass in quick proto tcp to port 7799
-# pfctl -n -f /etc/pf.conf
-# pfctl -f /etc/pf.conf
+
+pfctl -n -f /etc/pf.conf
+pfctl -f /etc/pf.conf
 ```
 
-### Step 3: Add kippo user
+### Step 3: Add kippo user (as root)
 
-```
-# useradd -m kippo
-# su - kippo
-```
-
-### Step 4: Install kippo
-
-```
-% curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
-% tar zxvf kippo.tar.gz
-% mv micheloosterhof-kippo-c89face/ kippo
-% cd kippo
-% cp kippo.cfg.dist kippo.cfg
+```sh
+useradd -m kippo
+su - kippo
 ```
 
-### Step 5: Autostart
+### Step 4: Install kippo (as kippo)
 
+```sh
+curl -o kippo.tar.gz -L https://github.com/micheloosterhof/kippo/tarball/master
+tar zxvf kippo.tar.gz
+mv micheloosterhof-kippo-c89face/ kippo
+cd kippo
+cp kippo.cfg.dist kippo.cfg
 ```
+
+### Step 5: Autostart (as root)
+
+```sh
 cd /etc
 cp rc.local rc.local.orig
-nano rc local
+nano rc.local
 diff rc.local.orig rc.local
 6a7
 > su - kippo -c “cd /home/kippo/kippo ; ./start.sh“
@@ -361,13 +380,13 @@ Filesystem     Size    Used   Avail Capacity  Mounted on
 Memory: Real: 10M/42M act/tot Free: 955M Cache: 18M Swap: 0K/1639M
 ```
 
-## Virustotal check for all
+## Virustotal check for all (as kippo)
 
-```
-% curl -L -o virustotalcheck 'https://docs.google.com/uc?authuser=0&id=0B2yo6ihQHh1sRlBVaFFPdUUwTDg&export=download'
-% chmod a+x virtustotalcheck
-% curl -L -o virustotalcheck-all 'https://docs.google.com/uc?authuser=0&id=0B2yo6ihQHh1sOVhtMnpMRklrMnM&export=download'
-% chmod a+x virustotalcheck-all
+```sh
+curl -L -o virustotalcheck 'https://docs.google.com/uc?authuser=0&id=0B2yo6ihQHh1sRlBVaFFPdUUwTDg&export=download'
+chmod a+x virtustotalcheck
+curl -L -o virustotalcheck-all 'https://docs.google.com/uc?authuser=0&id=0B2yo6ihQHh1sOVhtMnpMRklrMnM&export=download'
+chmod a+x virustotalcheck-all
 ```
 
 **virustotalcheck sample output (build-in delay due to virustotal ToS)**
@@ -401,30 +420,37 @@ c9ba320de7fde61a22b3b32f516014b5083db1;xfsdxd;6 /
 …
 ```
 
-## Patching Kippo with syslog support
+## Patching Kippo with syslog support (as kippo)
 
-```
-% cd /home/kippo/kippo/kippo/dblog
-% curl -O http://shell.jkry.org/~ecode/kippo/syslog.py
-% cd ..
-% cd ..
-% nano kippo.cfg
-% diff kippo.cfg.dist kippo.cfg
+```sh
+cd /home/kippo/kippo/kippo/dblog
+curl -O http://shell.jkry.org/~ecode/kippo/syslog.py
+cd ..
+cd ..
+nano kippo.cfg
+diff kippo.cfg.dist kippo.cfg
 182a183
 > [database_syslog]
-# reboot
+
+reboot # root
 ```
 
-**Testing logging and log formats**
+**Testing logging and log formats** (as kippo)
 
-```
-% tail -f /home/kippo/kippo/kippo.log
-% tail -f /var/log/syslog
+```sh
+tail -f /home/kippo/kippo/kippo.log
+tail -f /var/log/syslog
 
-  ssh cyberdefense@192.168.56.101
-  ssh root@192.168.56.101
-  sftp root@192.168.56.101 downloads/tulokset.csv
-  ssh root@192.168.56.101 ifconfig
-  ssh root@192.168.56.101
-    wget http://shell.jkry.org/~ecode/kippo/syslog.py
+ssh cyberdefense@192.168.56.101
+ssh root@192.168.56.101
+sftp root@192.168.56.101 downloads/tulokset.csv
+ssh root@192.168.56.101 ifconfig
+ssh root@192.168.56.101
+wget http://shell.jkry.org/~ecode/kippo/syslog.py # just an example
 ```
+
+...
+
+***
+This document is now obsolete, provided here for reference purposes only
+***

@@ -55,7 +55,7 @@ docker login
 docker push ouspg/cowrie
 ```
 
-## Publishing automatically on the Docker Hub (latest)
+### Publishing automatically on the Docker Hub (latest)
 
 Latest builds are published automatically based on the
 [Automated Builds on Docker Hub](https://docs.docker.com/docker-hub/builds/)
