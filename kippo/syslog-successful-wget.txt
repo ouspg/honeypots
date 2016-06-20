@@ -1,0 +1,6 @@
+Mar  5 19:12:20 ubuntu kippo: 11 192.168.56.1 51142 connected
+Mar  5 19:12:20 ubuntu kippo: 11 192.168.56.1 51142 version SSH-2.0-OpenSSH_5.9
+Mar  5 19:12:23 ubuntu kippo: 11 192.168.56.1 51142 login root/qwerty
+Mar  5 19:12:23 ubuntu kippo: 11 192.168.56.1 51142 terminal 181x14
+Mar  5 19:12:44 ubuntu kippo: 11 192.168.56.1 51142 cmd wget http://shell.jkry.org/~ecode/kippo/syslog.py
+Mar  5 19:12:44 ubuntu kippo: 11 192.168.56.1 51142 download http://shell.jkry.org/~ecode/kippo/syslog.py dl/20140305191244_http___shell_jkry_org__ecode_kippo_syslog_py

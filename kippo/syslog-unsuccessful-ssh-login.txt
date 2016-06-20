@@ -1,0 +1,4 @@
+Mar  5 18:52:51 ubuntu kippo: 3 192.168.56.1 51124 connected
+Mar  5 18:52:51 ubuntu kippo: 3 192.168.56.1 51124 version SSH-2.0-OpenSSH_5.9
+Mar  5 18:53:06 ubuntu kippo: 3 192.168.56.1 51124 login_failed cyberdefense/plaaaaaaaaaa
+Mar  5 18:53:10 ubuntu kippo: 3 192.168.56.1 51124 disconnected

@@ -1,0 +1,27 @@
+2014-03-06 12:08:09+0200 [kippo.core.honeypot.HoneyPotSSHFactory] New connection: 192.168.56.1:52559 (192.168.56.101:22) [session: 0]
+2014-03-06 12:08:09+0200 [HoneyPotTransport,0,192.168.56.1] Remote SSH version: SSH-2.0-OpenSSH_5.9
+2014-03-06 12:08:09+0200 [HoneyPotTransport,0,192.168.56.1] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2014-03-06 12:08:09+0200 [HoneyPotTransport,0,192.168.56.1] outgoing: aes128-ctr hmac-md5 none
+2014-03-06 12:08:09+0200 [HoneyPotTransport,0,192.168.56.1] incoming: aes128-ctr hmac-md5 none
+2014-03-06 12:08:09+0200 [HoneyPotTransport,0,192.168.56.1] NEW KEYS
+2014-03-06 12:08:09+0200 [HoneyPotTransport,0,192.168.56.1] starting service ssh-userauth
+2014-03-06 12:08:09+0200 [SSHService ssh-userauth on HoneyPotTransport,0,192.168.56.1] root trying auth none
+2014-03-06 12:08:09+0200 [SSHService ssh-userauth on HoneyPotTransport,0,192.168.56.1] root trying auth keyboard-interactive
+2014-03-06 12:08:13+0200 [SSHService ssh-userauth on HoneyPotTransport,0,192.168.56.1] login attempt [root/qwerty] succeeded
+2014-03-06 12:08:13+0200 [SSHService ssh-userauth on HoneyPotTransport,0,192.168.56.1] root authenticated with keyboard-interactive
+2014-03-06 12:08:13+0200 [SSHService ssh-userauth on HoneyPotTransport,0,192.168.56.1] starting service ssh-connection
+2014-03-06 12:08:13+0200 [SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] got channel session request
+2014-03-06 12:08:13+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] channel open
+2014-03-06 12:08:13+0200 [SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] got global no-more-sessions@openssh.com request
+2014-03-06 12:08:13+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] request_env: LC_CTYPE=UTF-8
+2014-03-06 12:08:13+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] asking for subsystem "sftp"
+2014-03-06 12:08:13+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] {'sftp': <class twisted.conch.ssh.filetransfer.FileTransferServer at 0x8a29d1c>}
+2014-03-06 12:08:14+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] SFTP realPath: .
+2014-03-06 12:09:00+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] SFTP openFile: /root/tulokset.csv
+2014-03-06 12:09:00+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] fs.open /root/tulokset.csv
+2014-03-06 12:09:00+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] fs.open creat
+2014-03-06 12:09:00+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] fs.open trunc
+2014-03-06 12:09:00+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] fs.open wronly 1
+2014-03-06 12:09:00+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] fs.open file for writing, saving to dl/20140306120900__root_tulokset_csv
+2014-03-06 12:09:00+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] Updating realfile to dl/20140306120900__root_tulokset_csv
+2014-03-06 12:09:00+0200 [SSHService ssh-connection on HoneyPotTransport,0,192.168.56.1] adding 65638 to 65434 in channel 0

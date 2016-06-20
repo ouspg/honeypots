@@ -1,0 +1,30 @@
+2014-03-05 19:09:19+0200 [kippo.core.honeypot.HoneyPotSSHFactory] New connection: 192.168.56.1:51139 (192.168.56.101:22) [session: 9]
+2014-03-05 19:09:19+0200 [HoneyPotTransport,9,192.168.56.1] Remote SSH version: SSH-2.0-OpenSSH_5.9
+2014-03-05 19:09:19+0200 [HoneyPotTransport,9,192.168.56.1] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2014-03-05 19:09:19+0200 [HoneyPotTransport,9,192.168.56.1] outgoing: aes128-ctr hmac-md5 none
+2014-03-05 19:09:19+0200 [HoneyPotTransport,9,192.168.56.1] incoming: aes128-ctr hmac-md5 none
+2014-03-05 19:09:19+0200 [HoneyPotTransport,9,192.168.56.1] NEW KEYS
+2014-03-05 19:09:19+0200 [HoneyPotTransport,9,192.168.56.1] starting service ssh-userauth
+2014-03-05 19:09:19+0200 [SSHService ssh-userauth on HoneyPotTransport,9,192.168.56.1] root trying auth none
+2014-03-05 19:09:19+0200 [SSHService ssh-userauth on HoneyPotTransport,9,192.168.56.1] root trying auth keyboard-interactive
+2014-03-05 19:09:25+0200 [SSHService ssh-userauth on HoneyPotTransport,9,192.168.56.1] login attempt [root/qwerty] succeeded
+2014-03-05 19:09:25+0200 [SSHService ssh-userauth on HoneyPotTransport,9,192.168.56.1] root authenticated with keyboard-interactive
+2014-03-05 19:09:25+0200 [SSHService ssh-userauth on HoneyPotTransport,9,192.168.56.1] starting service ssh-connection
+2014-03-05 19:09:25+0200 [SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] got channel session request
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] channel open
+2014-03-05 19:09:25+0200 [SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] got global no-more-sessions@openssh.com request
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] request_env: LC_CTYPE=UTF-8
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] executing command "ifconfig"
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] Executing command: "ifconfig"
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] Opening TTY log: log/tty/20140305-190925-7459.log
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] /etc/motd resolved into /etc/motd
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] Running exec cmd "ifconfig"
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] CMD: ifconfig
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] Command found: ifconfig
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] Reading txtcmd from "/home/kippo/kippo/txtcmds/sbin/ifconfig"
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] sending request exit-status
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] sending close 0
+2014-03-05 19:09:25+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,9,192.168.56.1] remote close
+2014-03-05 19:09:25+0200 [HoneyPotTransport,9,192.168.56.1] Got remote error, code 11
+        reason: disconnected by user
+2014-03-05 19:09:25+0200 [HoneyPotTransport,9,192.168.56.1] connection lost

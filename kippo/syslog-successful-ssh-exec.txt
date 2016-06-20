@@ -1,0 +1,5 @@
+Mar  5 19:09:19 ubuntu kippo: 10 192.168.56.1 51139 connected
+Mar  5 19:09:19 ubuntu kippo: 10 192.168.56.1 51139 version SSH-2.0-OpenSSH_5.9
+Mar  5 19:09:25 ubuntu kippo: 10 192.168.56.1 51139 login root/qwerty
+Mar  5 19:09:25 ubuntu kippo: 10 192.168.56.1 51139 cmd ifconfig
+Mar  5 19:09:25 ubuntu kippo: 10 192.168.56.1 51139 disconnected

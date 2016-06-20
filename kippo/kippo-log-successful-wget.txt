@@ -1,0 +1,27 @@
+2014-03-05 19:12:20+0200 [kippo.core.honeypot.HoneyPotSSHFactory] New connection: 192.168.56.1:51142 (192.168.56.101:22) [session: 10]
+2014-03-05 19:12:20+0200 [HoneyPotTransport,10,192.168.56.1] Remote SSH version: SSH-2.0-OpenSSH_5.9
+2014-03-05 19:12:20+0200 [HoneyPotTransport,10,192.168.56.1] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2014-03-05 19:12:20+0200 [HoneyPotTransport,10,192.168.56.1] outgoing: aes128-ctr hmac-md5 none
+2014-03-05 19:12:20+0200 [HoneyPotTransport,10,192.168.56.1] incoming: aes128-ctr hmac-md5 none
+2014-03-05 19:12:20+0200 [HoneyPotTransport,10,192.168.56.1] NEW KEYS
+2014-03-05 19:12:20+0200 [HoneyPotTransport,10,192.168.56.1] starting service ssh-userauth
+2014-03-05 19:12:20+0200 [SSHService ssh-userauth on HoneyPotTransport,10,192.168.56.1] root trying auth none
+2014-03-05 19:12:20+0200 [SSHService ssh-userauth on HoneyPotTransport,10,192.168.56.1] root trying auth keyboard-interactive
+2014-03-05 19:12:23+0200 [SSHService ssh-userauth on HoneyPotTransport,10,192.168.56.1] login attempt [root/qwerty] succeeded
+2014-03-05 19:12:23+0200 [SSHService ssh-userauth on HoneyPotTransport,10,192.168.56.1] root authenticated with keyboard-interactive
+2014-03-05 19:12:23+0200 [SSHService ssh-userauth on HoneyPotTransport,10,192.168.56.1] starting service ssh-connection
+2014-03-05 19:12:23+0200 [SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] got channel session request
+2014-03-05 19:12:23+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] channel open
+2014-03-05 19:12:23+0200 [SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] got global no-more-sessions@openssh.com request
+2014-03-05 19:12:23+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] pty request: xterm-256color (14, 181, 1267, 202)
+2014-03-05 19:12:23+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] Terminal size: 14 181
+2014-03-05 19:12:23+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] request_env: LC_CTYPE=UTF-8
+2014-03-05 19:12:23+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] getting shell
+2014-03-05 19:12:23+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] Opening TTY log: log/tty/20140305-191223-9065.log
+2014-03-05 19:12:23+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] /etc/motd resolved into /etc/motd
+2014-03-05 19:12:44+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] CMD: wget http://shell.jkry.org/~ecode/kippo/syslog.py
+2014-03-05 19:12:44+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] Command found: wget http://shell.jkry.org/~ecode/kippo/syslog.py
+2014-03-05 19:12:44+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,10,192.168.56.1] Starting factory <HTTPProgressDownloader: http://shell.jkry.org/~ecode/kippo/syslog.py>
+2014-03-05 19:12:44+0200 [HTTPPageDownloader,client] Saving URL (http://shell.jkry.org/~ecode/kippo/syslog.py) to dl/20140305191244_http___shell_jkry_org__ecode_kippo_syslog_py
+2014-03-05 19:12:44+0200 [HTTPPageDownloader,client] Updating realfile to dl/20140305191244_http___shell_jkry_org__ecode_kippo_syslog_py
+2014-03-05 19:12:44+0200 [HTTPPageDownloader,client] Stopping factory <HTTPProgressDownloader: http://shell.jkry.org/~ecode/kippo/syslog.py>

@@ -1,0 +1,24 @@
+2014-03-05 18:55:57+0200 [kippo.core.honeypot.HoneyPotSSHFactory] New connection: 192.168.56.1:51128 (192.168.56.101:22) [session: 4]
+2014-03-05 18:55:57+0200 [HoneyPotTransport,4,192.168.56.1] Remote SSH version: SSH-2.0-OpenSSH_5.9
+2014-03-05 18:55:57+0200 [HoneyPotTransport,4,192.168.56.1] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2014-03-05 18:55:57+0200 [HoneyPotTransport,4,192.168.56.1] outgoing: aes128-ctr hmac-md5 none
+2014-03-05 18:55:57+0200 [HoneyPotTransport,4,192.168.56.1] incoming: aes128-ctr hmac-md5 none
+2014-03-05 18:55:57+0200 [HoneyPotTransport,4,192.168.56.1] NEW KEYS
+2014-03-05 18:55:57+0200 [HoneyPotTransport,4,192.168.56.1] starting service ssh-userauth
+2014-03-05 18:55:57+0200 [SSHService ssh-userauth on HoneyPotTransport,4,192.168.56.1] root trying auth none
+2014-03-05 18:55:57+0200 [SSHService ssh-userauth on HoneyPotTransport,4,192.168.56.1] root trying auth keyboard-interactive
+2014-03-05 18:56:04+0200 [SSHService ssh-userauth on HoneyPotTransport,4,192.168.56.1] login attempt [root/qwerty] succeeded
+2014-03-05 18:56:04+0200 [SSHService ssh-userauth on HoneyPotTransport,4,192.168.56.1] root authenticated with keyboard-interactive
+2014-03-05 18:56:04+0200 [SSHService ssh-userauth on HoneyPotTransport,4,192.168.56.1] starting service ssh-connection
+2014-03-05 18:56:04+0200 [SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] got channel session request
+2014-03-05 18:56:04+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] channel open
+2014-03-05 18:56:04+0200 [SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] got global no-more-sessions@openssh.com request
+2014-03-05 18:56:04+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] pty request: xterm-256color (14, 181, 1267, 202)
+2014-03-05 18:56:04+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] Terminal size: 14 181
+2014-03-05 18:56:04+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] request_env: LC_CTYPE=UTF-8
+2014-03-05 18:56:04+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] getting shell
+2014-03-05 18:56:04+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] Opening TTY log: log/tty/20140305-185604-1436.log
+2014-03-05 18:56:04+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] /etc/motd resolved into /etc/motd
+2014-03-05 18:58:08+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] CMD: ifconfig
+2014-03-05 18:58:08+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] Command found: ifconfig
+2014-03-05 18:58:08+0200 [SSHChannel session (0) on SSHService ssh-connection on HoneyPotTransport,4,192.168.56.1] Reading txtcmd from "/home/kippo/kippo/txtcmds/sbin/ifconfig"
