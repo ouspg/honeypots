@@ -16,7 +16,7 @@ Kippo is now obsolete in our use, see [our old instructions](https://docs.google
 
 Replaces old patched up Kippo in our use.
 
-### Running directly from the Docker Hub
+### Running locally directly from the Docker Hub
 
 A prebuild container image is available from the
 [Docker Hub](https://hub.docker.com/r/ouspg/cowrie/).
@@ -24,6 +24,9 @@ A prebuild container image is available from the
 ```sh
 docker run -d -p 2222:2222 --name cowrie ouspg/cowrie
 ```
+
+See e.g. the DigitalOcean example below on how to replace host
+ssh-service with the honeypot.
 
 ### Building in a cloned repository
 
@@ -39,19 +42,26 @@ docker build -t cowrie --rm .
 docker build -t cowrie --rm https://github.com/ouspg/honeypots.git#:cowrie
 ```
 
-### Publishing on the Docker Hub
+### Publishing manually on the Docker Hub (stable)
 
-Based on the instructions from:
-https://docs.docker.com/mac/step_six/
+Stable builds are published manually based on the
+[Tag, push, and pull your image](https://docs.docker.com/mac/step_six/)
+instructions.
 
 ```sh
 docker images
-docker tag <imageid> ouspg/cowrie:latest
+docker tag <imageid> ouspg/cowrie:stable
 docker login
 docker push ouspg/cowrie
 ```
 
-### Running self-built locally
+## Publishing automatically on the Docker Hub (latest)
+
+Latest builds are published automatically based on the
+[Automated Builds on Docker Hub](https://docs.docker.com/docker-hub/builds/)
+instructions.
+
+### Running locally based on self-built image
 
 ```sh
 docker run -ti -p 2222:2222 --rm cowrie
