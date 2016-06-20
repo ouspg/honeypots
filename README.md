@@ -10,7 +10,7 @@ getting old.
 
 ## Kippo
 
-Kippo is now obsolete in our use, see [our old instructions](https://docs.google.com/document/d/1alb60WiWMzghZlApgfqfh5LF2mjn-U0Nm8WeKcPD-hI/edit).
+Kippo is now obsolete in our use, see [our old instructions](kippo/).
 
 ## Cowrie
 

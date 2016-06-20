@@ -447,7 +447,7 @@ Tests & resulting logs:
  1. `ssh cyberdefense@192.168.56.101`
   * [Unsuccessful ssh login (in) (kippo.log)](kippo-log-unsuccessful-ssh-login.txt)
   * [Unsuccessful ssh login (in) (syslog)](syslog-unsuccessful-ssh-login.txt)
- 1. `ssh root@192.168.56.101`
+ 1. `ssh root@192.168.56.101` and run `ifconfig`
   * [Successful ssh login (in) (kippo.log)](kippo-log-successful-ssh-login.txt)
   * [Successful ssh login (in) (syslog)](syslog-successful-ssh-login.txt)
  1. `sftp root@192.168.56.101 downloads/tulokset.csv`
@@ -456,10 +456,10 @@ Tests & resulting logs:
  1. `root@192.168.56.101 ifconfig`
   * [Successful ssh exec (in) (kippo.log)](kippo-log-successful-ssh-exec.txt)
   * [Successful ssh exec (in) (syslog)](syslog-successful-ssh-exec.txt)
- 1. `ssh root@192.168.56.101`
-  1. `wget http://shell.jkry.org/~ecode/kippo/syslog.py` # just an example URL
-   * [Successful wget (out) (kippo.log)](kippo-log-successful-sftp.txt)
-   * [Successful wget (out) (syslog)](kippo-log-successful-sftp.txt)
+ 1. `ssh root@192.168.56.101` and run `wget http://shell.jkry.org/~ecode/kippo/syslog.py`
+   * [Successful wget (out) (kippo.log)](kippo-log-successful-wget.txt)
+   * [Successful wget (out) (syslog)](syslog-successful-wget.txt)
+
 ***
 This document is now obsolete, provided here for reference purposes only
 ***
