@@ -19,7 +19,7 @@ RUN apk --no-cache upgrade && \
     pip install enum34 && \
     pip install service-identity
 RUN adduser -D -s /bin/sh cowrie cowrie && \
-    su - cowrie -c "git clone -q https://github.com/ouspg/cowrie && \
+    su - cowrie -c "git clone -q https://github.com/micheloosterhof/cowrie && \
                     cd cowrie && cp cowrie.cfg.dist cowrie.cfg"
 
 EXPOSE 2222
