@@ -130,7 +130,7 @@ Alpine for the Kippo and only one for the Cowrie, before ours.
 | dariusbakunas/kippo  | debian:wheezy  | 3.5k  | 384.1 MB   |
 | vensder/alpine-kippo | alpine         | 29    | 81.13 MB   |
 | dtagdevsec/cowrie    | ubuntu:14.04.4 | 3.9k  | 462.6 MB   |
-| ouspg/cowrie         | alpine:latest  | 4     | 114.2 MB   |
+| ouspg/cowrie         | alpine:latest  | 4     | 96.21 MB   |
 | vimagick/cowrie      | alpine         | 529   | 98.94 MB   |
 
 Please dind some naive "build time" comparison, please note that only the

@@ -10,17 +10,18 @@ RUN apk --no-cache upgrade && \
       libffi-dev \
       py-cryptography \
       py-pip \
+      openssl \
+      tar \
       py-six \
       py-cffi \
       py-idna \
       py-ipaddress \
-      py-openssl \
-      git && \
+      py-openssl &&\
     pip install enum34 && \
     pip install service-identity
 RUN adduser -D -s /bin/sh cowrie cowrie && \
-    su - cowrie -c "git clone -q https://github.com/micheloosterhof/cowrie && \
-                    cd cowrie && cp cowrie.cfg.dist cowrie.cfg"
+    su - cowrie -c "mkdir cowrie && cd cowrie && wget https://github.com/micheloosterhof/cowrie/archive/master.tar.gz -O - | tar -xz --strip=1 && \
+    cp cowrie.cfg.dist cowrie.cfg"
 
 EXPOSE 2222
 USER cowrie
