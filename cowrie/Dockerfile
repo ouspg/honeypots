@@ -20,11 +20,10 @@ RUN apk --no-cache upgrade && \
     pip install enum34 && \
     pip install service-identity
 RUN adduser -D -s /bin/sh cowrie cowrie && \
-    cd /home/cowrie && \
-    su - cowrie -c "wget https://github.com/micheloosterhof/cowrie/archive/master.tar.gz -O - | tar -xz --strip=1 && \
+    su - cowrie -c "mkdir cowrie && cd cowrie && wget https://github.com/micheloosterhof/cowrie/archive/master.tar.gz -O - | tar -xz --strip=1 && \
     cp cowrie.cfg.dist cowrie.cfg"
 
 EXPOSE 2222
 USER cowrie
-WORKDIR /home/cowrie
+WORKDIR /home/cowrie/cowrie
 CMD env XARGS=--nodaemon ./start.sh
