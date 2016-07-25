@@ -3,8 +3,8 @@
 Packaging honeypots for small communities with joint Situational Awareness.
 
 * **WHAT**: Easy to deploy and to keep updated honeypots with Situational Awareness.
-* **WHY**: Because we can! And because previous boxes, software and os installs are
-getting old.
+* **WHY**: Because we can! And because previous boxes, software and os
+  installs are getting old.
 * **TO WHOM**: OUSPG-alumnis and affiliates who have been running honeypots.
 * **HOW**: Dockerify latest.
 
@@ -72,9 +72,9 @@ ssh-service with the honeypot.
 
 ### Running on the DigitalOcean
 
- * First choose create droplet
- * Then choose Docker from One-click apps section
- * Choose hostname and create your machine
+* First choose create droplet
+* Then choose Docker from One-click apps section
+* Choose hostname and create your machine
 
 ```sh
 # apt-get update
@@ -126,7 +126,7 @@ Alpine for the Kippo and only one for the Cowrie, before ours.
 
 | Docker Hub Image     | Base Image     | Pulls | Image Size |
 | -------------------  | -------------- | ----- | ---------- |
-| dtagdevsec/kippo     | ubuntu:14.04.3 | 10k+  | 461.9 MB   |    
+| dtagdevsec/kippo     | ubuntu:14.04.3 | 10k+  | 461.9 MB   |
 | dariusbakunas/kippo  | debian:wheezy  | 3.5k  | 384.1 MB   |
 | vensder/alpine-kippo | alpine         | 29    | 81.13 MB   |
 | dtagdevsec/cowrie    | ubuntu:14.04.4 | 3.9k  | 462.6 MB   |
@@ -144,44 +144,45 @@ and oranges due to lack of feature parity.
 ...
 Successfully built 699733b66151
 
-real	3m10.624s
-user	0m0.315s
-sys	0m0.135s
+real 3m10.624s
+user 0m0.315s
+sys 0m0.135s
 
 % time docker build --no-cache -t cowrie https://github.com/dtag-dev-sec/cowrie.git
 ...
 Successfully built adfbd5e129e9
 
-real	3m28.518s
-user	0m0.649s
-sys	0m0.406s
+real 3m28.518s
+user 0m0.649s
+sys 0m0.406s
 
 % time docker build -t cowrie --rm https://github.com/ouspg/honeypots.git#:cowrie
 ...
 Successfully built 7e63227201d4
 
-real	2m32.697s
-user	0m0.237s
-sys	0m0.218s
+real 2m32.697s
+user 0m0.237s
+sys 0m0.218s
 ```
 
 ## Further Work
 
- * [ ] Achieve feature parity with Situational Awareness we had over the Kippo instances
+* [ ] Achieve feature parity with Situational Awareness we had over the Kippo instances
 
 ## Additional References
 
-* http://threatstream.github.io/mhn/
-* http://dtag-dev-sec.github.io
-* https://jordan-wright.github.io/blog/2015/05/11/60-days-of-watching-hackers-attack-elasticsearch/
-* http://turbochaos.blogspot.fi/2013/05/attacking-kippo.html
-* https://isc.sans.edu/forums/diary/Kippo+Users+Beware+Another+fingerprinting+trick/18119/
-* http://morris.guru/detecting-kippo-ssh-honeypots/
-* https://groups.google.com/forum/#!topic/kippousers/PpZGKVKNawI
-* https://www.digitalocean.com/community/articles/how-to-install-kippo-an-ssh-honeypot-on-an-ubuntu-cloud-server
-* http://kitrule.blogspot.fi/2012/03/kippo-ssh-honeypot-on-ubuntu-1104.html
+* <http://threatstream.github.io/mhn/>
+* <http://dtag-dev-sec.github.io>
+* <https://jordan-wright.github.io/blog/2015/05/11/60-days-of-watching-hackers-attack-elasticsearch/>
+* <http://turbochaos.blogspot.fi/2013/05/attacking-kippo.html>
+* <https://isc.sans.edu/forums/diary/Kippo+Users+Beware+Another+fingerprinting+trick/18119/>
+* <http://morris.guru/detecting-kippo-ssh-honeypots/>
+* <https://groups.google.com/forum/#!topic/kippousers/PpZGKVKNawI>
+* <https://www.digitalocean.com/community/articles/how-to-install-kippo-an-ssh-honeypot-on-an-ubuntu-cloud-server>
+* <http://kitrule.blogspot.fi/2012/03/kippo-ssh-honeypot-on-ubuntu-1104.html>
+* <https://isc.sans.edu/forums/diary/SSH+Honeypots+Abused+as+Proxy/20837/>
 * Other honeypot repos
- * https://github.com/desaster/kippo
- * https://github.com/micheloosterhof/cowrie
- * https://github.com/vensder/alpine-kippo/blob/master/Dockerfile
- * https://github.com/vimagick/dockerfiles/tree/master/cowrie
+  * <https://github.com/desaster/kippo>
+  * <https://github.com/micheloosterhof/cowrie>
+  * <https://github.com/vensder/alpine-kippo/blob/master/Dockerfile>
+  * <https://github.com/vimagick/dockerfiles/tree/master/cowrie>
